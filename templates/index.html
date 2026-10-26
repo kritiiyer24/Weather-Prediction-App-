@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Weather Application</title>
+        <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+                margin-top: 80px;
+                background: #eaf4ff;
+            }
+            .card{
+                background-color: white;
+                padding: 30px;
+                margin: auto;
+                width: 320px;
+                border-radius: 15px;
+                box-shadow: 0 4px 12px #bbb;
+            }
+            input,button{
+                padding: top;
+                margin: 8px;
+            }
+            button{
+                background-color: #110000;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1>Weather App </h1>
+            <form method="post">
+                <input type="text" name="city" placeholder="Enter the City Name" required>
+                <button type="submit">Get Weather Data</button>
+            </form>
+            {% if weather %}
+                <h2>City:{{weather.city}}</h2>
+                <h2>Temperature:{{weather.temperature}}</h2>
+                <h2>Description:{{weather.description}}</h2>
+                <h2>Humidity:{{weather.humidity}}%</h2>
+            {% endif %}
+            {% if error %}
+                <p style="color:red">{{error}}</p>
+            {% endif %}
+            </div>
+    </body>
+</html>
+
